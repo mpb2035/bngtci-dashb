@@ -3589,6 +3589,12 @@
 
         let currentEduGroup = null;
 
+        function goToSector(id) {
+            const el = document.querySelector('[data-sector-id="' + id + '"]');
+            if (el) { el.click(); }
+            else { switchTab('sector' + id, document.querySelector('.menu-item') || document.body, id); }
+        }
+
         function switchTab(tabName, element, sectorId = null, groupId = null) {
             closeMobileSidebar();
             currentTab = tabName;
@@ -3785,7 +3791,7 @@
                 const naPct = (bands.na / secTotal * 100);
 
                 sectorListHTML += `
-                    <div class="sector-list-item" onclick="document.querySelector('[data-sector-id=${sector.id}]').click()">
+                    <div class="sector-list-item" onclick="goToSector(${sector.id})">
                         <div class="sector-item-header">
                             <span class="sector-item-title">${sector.title}</span>
                             <span class="sector-item-progress-label">Avg: <strong>${secAvg}</strong> | Review Progress: <strong>${secReviewed}/${secTotal}</strong> (${percentReviewed}%)</span>
