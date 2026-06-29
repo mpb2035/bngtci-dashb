@@ -4762,12 +4762,26 @@
             }
         }
         
-        function toggleJsonModalFullscreen() {
+                function toggleJsonModalFullscreen() {
             const modal = document.querySelector('.json-modal');
-            if (modal) {
-                modal.classList.toggle('fullscreen');
-                const btn = modal.querySelector('.jm-maximize');
-                if (btn) btn.textContent = modal.classList.contains('fullscreen') ? '✖' : '⛶';
+            const bg = document.getElementById('json-modal-bg');
+            const btn = document.querySelector('.jm-maximize');
+            const isFullscreen = modal && modal.classList.contains('fullscreen');
+            if (!modal) return;
+            if (!isFullscreen) {
+                modal.classList.add('fullscreen');
+                modal.style.cssText = 'width:100% !important; max-width:100% !important; height:100% !important; max-height:100% !important; border-radius:0 !important;';
+                if (bg) { bg.style.alignItems = 'stretch'; bg.style.justifyContent = 'stretch'; }
+                const editor = modal.querySelector('#json-editor-area');
+                if (editor) editor.style.height = 'calc(100vh - 230px)';
+                if (btn) btn.textContent = '\u2716';
+            } else {
+                modal.classList.remove('fullscreen');
+                modal.style.cssText = '';
+                if (bg) { bg.style.alignItems = ''; bg.style.justifyContent = ''; }
+                const editor = modal.querySelector('#json-editor-area');
+                if (editor) editor.style.height = '';
+                if (btn) btn.textContent = '\u26f6';
             }
         }
 
