@@ -56,7 +56,7 @@
             background-color: var(--bg-primary);
             color: var(--text-primary);
             min-height: 100vh;
-            display: flex;
+            display: block;
             transition: background-color var(--transition-speed), color var(--transition-speed);
         }
 
@@ -245,9 +245,9 @@
 
         /* Main Content Styling */
         .main-container {
-            margin-left: 256px;
-            width: calc(100% - 256px);
-            padding: 32px 36px;
+            margin-left: 260px;
+            width: calc(100% - 260);
+            padding: 68px 36px 32 36px;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -1731,7 +1731,7 @@
         body.vm-tablet table.go-table td:nth-child(7) { display: none !important; }
 
         body.vm-desktop .sidebar        { width: 260px !important; transform: translateX(0) !important; }
-        body.vm-desktop .main-container { margin-left: 260px !important; width: calc(100% - 260px) !important; padding: 36px 40px !important; max-width: 1400px !important; padding-top: 36px !important; }
+        body.vm-desktop .main-container { margin-left: 260px !important; width: calc(100% - 260px) !important; padding: 36px 40px !important; max-width: 1400px !important; padding-top: 68px !important; }
         body.vm-desktop .mobile-header  { display: none !important; }
         body.vm-desktop .dashboard-grid,
         body.vm-desktop .edu-kpi-grid,
@@ -1793,7 +1793,7 @@
         body.vm-tablet table.go-table td:nth-child(7) { display: none !important; }
 
         body.vm-desktop .sidebar        { width: 260px !important; transform: translateX(0) !important; }
-        body.vm-desktop .main-container { margin-left: 260px !important; width: calc(100% - 260px) !important; padding: 36px 40px !important; max-width: 1400px !important; padding-top: 36px !important; }
+        body.vm-desktop .main-container { margin-left: 260px !important; width: calc(100% - 260px) !important; padding: 36px 40px !important; max-width: 1400px !important; padding-top: 68px !important; }
         body.vm-desktop .mobile-header  { display: none !important; }
         body.vm-desktop .dashboard-grid,
         body.vm-desktop .edu-kpi-grid,
@@ -2067,8 +2067,8 @@
 
         /* DESKTOP ≥1025px */
         @media (min-width: 1025px) {
-            .sidebar { width: 256px; transform: none !important; }
-            .main-container { margin-left: 256px; width: calc(100% - 256px); padding: 32px 36px; }
+            .sidebar { width: 260; transform: none !important; }
+            .main-container { margin-left: 260; width: calc(100% - 260); padding: 68px 36px 32 36px; }
             .mobile-header { display: none !important; }
             .dashboard-grid { grid-template-columns: 1.5fr 1fr; }
         }
@@ -2163,6 +2163,7 @@
 
         /* ── GITHUB EDIT BANNER ── */
         .gh-banner {
+                        position: fixed; top: 0; left: 260px; right: 0; z-index: 155;
             background: linear-gradient(90deg, #0f172a, #1e293b);
             color: #94a3b8; font-size: 11.5px;
             padding: 7px 16px; display: flex; align-items: center;
