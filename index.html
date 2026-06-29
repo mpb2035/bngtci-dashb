@@ -2408,11 +2408,11 @@
         // Initialize App
         // ── GITHUB PAGES JSON FETCH LOADER ─────────────────────────────
         const DATA_FILES = {
-            gtciData:      'data/gtciData.json',
-            educationData: 'data/educationData.json',
-            zeroData:      'data/zeroData.json',
-            gtciAllData:   'data/gtciAllData.json',
-            srcGroupData:  'data/srcGroupData.json',
+            gtciData:      'gtciData.json',
+            educationData: 'educationData.json',
+            zeroData:      'zeroData.json',
+            gtciAllData:   'gtciAllData.json',
+            srcGroupData:  'srcGroupData.json',
         };
 
         function showLoader(msg, pct) {
@@ -2494,13 +2494,13 @@
         // ============================================================
         // EDUCATION DEEP DIVE TAB
         // ============================================================
-        // educationData loaded from data/educationData.js
+        // educationData loaded from educationData.js
 
 
-        // zeroData loaded from data/zeroData.js
+        // zeroData loaded from zeroData.js
 
 
-        // gtciAllData loaded from data/gtciAllData.js
+        // gtciAllData loaded from gtciAllData.js
 
 
         const GO_PILLARS = [...new Set(gtciAllData.map(r => r.pillar).filter(Boolean))].sort();
@@ -2893,7 +2893,7 @@
             }
         }
 
-        // srcGroupData loaded from data/srcGroupData.js
+        // srcGroupData loaded from srcGroupData.js
 
 
         // ── SOURCE GROUPS TAB ──────────────────────────────────────────────
@@ -4666,11 +4666,11 @@
 
         // ── JSON EDITOR (GitHub Pages) ───────────────────────────────────────
         const JSON_DATASETS = {
-            'All 77 Indicators': { key: 'gtciAllData',   file: 'data/gtciAllData.json' },
-            'Zero / Near-Zero':  { key: 'zeroData',      file: 'data/zeroData.json' },
-            'Source Groups':     { key: 'srcGroupData',  file: 'data/srcGroupData.json' },
-            'Education Playbook':{ key: 'educationData', file: 'data/educationData.json' },
-            'Priority Sectors':  { key: 'gtciData',      file: 'data/gtciData.json' },
+            'All 77 Indicators': { key: 'gtciAllData',   file: 'gtciAllData.json' },
+            'Zero / Near-Zero':  { key: 'zeroData',      file: 'zeroData.json' },
+            'Source Groups':     { key: 'srcGroupData',  file: 'srcGroupData.json' },
+            'Education Playbook':{ key: 'educationData', file: 'educationData.json' },
+            'Priority Sectors':  { key: 'gtciData',      file: 'gtciData.json' },
         };
         let _activeJsonKey = 'zeroData'; // default to smallest
 
@@ -4736,7 +4736,7 @@
                 a.href     = URL.createObjectURL(blob);
                 a.download = _activeJsonKey + '.json';
                 a.click();
-                document.getElementById('json-status').textContent = '⬇ Downloaded! Commit to GitHub data/ folder to save permanently.';
+                document.getElementById('json-status').textContent = '⬇ Downloaded! Commit to GitHub  folder to save permanently.';
                 document.getElementById('json-status').style.color = '#0369a1';
             } catch(e) {
                 document.getElementById('json-status').textContent = '❌ Fix JSON errors before downloading.';
@@ -4873,7 +4873,7 @@
             <div class="json-modal-tabs" id="json-modal-tabs"></div>
             <div class="json-modal-body">
                 <div style="font-size:12px;color:#64748b;background:#fffbeb;border:1px solid #fbbf24;border-radius:6px;padding:8px 12px;">
-                    💡 <strong>To save permanently:</strong> Download the JSON, then commit it to your GitHub repo in the <code>data/</code> folder. Changes here only last until you reload.
+                    💡 <strong>To save permanently:</strong> Download the JSON, then commit it to your GitHub repo in the <code></code> folder. Changes here only last until you reload.
                 </div>
                 <textarea class="json-editor" id="json-editor-area" spellcheck="false"></textarea>
                 <div class="json-modal-actions">
