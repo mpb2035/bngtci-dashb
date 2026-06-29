@@ -3591,8 +3591,7 @@
 
         function goToSector(id) {
             const el = document.querySelector('[data-sector-id="' + id + '"]');
-            if (el) { el.click(); }
-            else { switchTab('sector' + id, document.querySelector('.menu-item') || document.body, id); }
+                        switchTab('sector' + id, el || document.querySelector('.menu-item') || document.body, id);
         }
 
         function switchTab(tabName, element, sectorId = null, groupId = null) {
