@@ -3701,7 +3701,7 @@
                 const sector = gtciData.sectors.find(s => s.id === sid);
                 titleEl.textContent = sector ? sector.name : 'Sector';
                 descEl.textContent = sector ? (sector.description || '') : '';
-                renderSector(contentDiv, sid);
+                renderSectorView(contentDiv, sector);
             } else {
                 titleEl.textContent = "Section";
                 descEl.textContent = "";
